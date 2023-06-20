@@ -13,7 +13,7 @@ let food;
 let dx;
 let dy;
 
-// Function to draw the snake and food on the canvas
+/** Main Draw loop */
 const draw = () => {
   // Clear the canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -61,7 +61,7 @@ const draw = () => {
   setTimeout(draw, delay);
 }
 
-// Function to generate new food position
+/** Places Apple to a random cell on the Canvas */
 const generateFood = () => {
   food.x = Math.floor(Math.random() * (canvas.width / snakeSize)) * snakeSize;
   food.y = Math.floor(Math.random() * (canvas.height / snakeSize)) * snakeSize;
@@ -75,7 +75,7 @@ const generateFood = () => {
   }
 }
 
-// Function to handle keyboard input
+/** Handles Keyboard input */
 const handleInput = (event) => {
   const key = event.key;
 
@@ -94,6 +94,7 @@ const handleInput = (event) => {
   }
 }
 
+/** Resets the game */
 const resetGame = () => {
     snake = [{ x: 0, y: 0 }];
 
